@@ -12,6 +12,7 @@ namespace TodoListApp.Data
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables() // Add this line to include environment variables
                 .Build();
 
             var builder = new DbContextOptionsBuilder<ApplicationDbContext>();
